@@ -21,8 +21,8 @@ jobs:
         echo $LIB_UI_BRANCH
         if [ $LIB_UI_BRANCH != "ssh://github.com:MI-ANEF/anef-ui-lib.git#develop" ]
         then
-          echo La branche Lib UI is not on develop
+          echo La branche Lib UI n'est pas sur develop
           exit 1
         fi
-        echo Lib UI branch is on develop
+        echo LA branche Lib UI branch est sur develop
 
