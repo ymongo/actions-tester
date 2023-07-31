@@ -1,0 +1,9 @@
+on:
+  pull_request:
+    branches:
+    - develop
+jobs:
+  check-if-is-libui-on-develop:
+    runs-on: ubuntu-latest
+    steps: 
+      - run: PACKAGE_VERSION=$(cat ${PACKAGE_JSON_PATH}/package.json | jq '.version' | tr -d '"')
