@@ -10,10 +10,7 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v3
-      with:
-        sparse-checkout: |
-          package.json
-        sparse-checkout-cone-mode: false
+      
     - name: Count
       run: | 
         git status
