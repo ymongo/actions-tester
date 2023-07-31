@@ -14,5 +14,5 @@ jobs:
     - name: Count
       run: | 
         git status
-        COUNT="$(git rev-list HEAD --count)"
+        COUNT="$(git rev-list master..HEAD --count)"
         echo $COUNT
