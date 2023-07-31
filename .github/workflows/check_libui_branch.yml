@@ -16,12 +16,13 @@ jobs:
         sparse-checkout: |
           package.json
         sparse-checkout-cone-mode: false
-    - name: Test
+    - name: Get Branch
       run: | 
         LIB_UI_BRANCH=$(cat ./package.json | jq '.dependencies["anef-ui"]' | tr -d '"')
         echo $LIB_UI_BRANCH
+    - name: Test
       if: $LIB_UI_BRANCH != "ssh://github.com:MI-ANEF/anef-ui-lib.git#develop"
-        exit 1
+      run: exit 1
     - name: Pass
       run: echo Lib UI branch is on develop
 
