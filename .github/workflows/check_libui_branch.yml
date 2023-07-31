@@ -3,10 +3,8 @@ on:
     branches:
     - main
 
-
-  
 jobs:
-  check-if-is-libui-on-develop:     
+  check-if-libui-on-develop:     
     runs-on: ubuntu-latest
     steps:
     - name: checkout
