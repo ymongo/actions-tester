@@ -4,7 +4,8 @@ on:
     - main
 
 jobs:
-  check-if-libui-on-develop:     
+  check-if-libui-on-develop:
+    name: Check Lib UI branch
     runs-on: ubuntu-latest
     steps:
     - name: checkout
