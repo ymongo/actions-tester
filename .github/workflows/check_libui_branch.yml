@@ -9,8 +9,6 @@ jobs:
   check-if-is-libui-on-develop:     
     runs-on: ubuntu-latest
     steps:
-    - env: 
-        LIB_UI_BRANCH: ""
     - name: checkout
       uses: actions/checkout@v3
       with:
@@ -21,9 +19,10 @@ jobs:
       run: | 
         LIB_UI_BRANCH=$(cat ./package.json | jq '.dependencies["anef-ui"]' | tr -d '"')
         echo $LIB_UI_BRANCH
-    - name: Test
-      if: LIB_UI_BRANCH != "ssh://github.com:MI-ANEF/anef-ui-lib.git#develop"
-      run: exit 1
-    - name: Pass
-      run: echo Lib UI branch is on develop
+        if [ $LIB_UI_BRANCH != "ssh://github.com:MI-ANEF/anef-ui-lib.git#develop" ]
+        then
+          echo La branche Lib UI is not on develop
+          exit 1
+        fi
+        echo Lib UI branch is on develop
 
