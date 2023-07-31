@@ -16,5 +16,5 @@ jobs:
         sparse-checkout-cone-mode: false
     - name: Count
       run: | 
-        COUNT=git rev-list HEAD --count
+        git rev-list HEAD --count
         echo $COUNT
