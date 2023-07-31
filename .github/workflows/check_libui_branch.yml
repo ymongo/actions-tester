@@ -8,5 +8,7 @@ jobs:
     env: 
       PACKAGE_VERSION: ""
     steps: 
-      - run: PACKAGE_VERSION=$(cat package.json | jq '.version' | tr -d '"')
+      - run: echo cwd
+      - run: ls
+      - run: PACKAGE_VERSION=$(cat ./package.json | jq '.version' | tr -d '"')
       - run: echo PACKAGE_VERSION
