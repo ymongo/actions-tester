@@ -44,7 +44,7 @@
     "@fullcalendar/list": "4.4.2",
     "@fullcalendar/timegrid": "4.4.2",
     "@hallysonh/ngx-imageviewer": "2.0.4",
-    "anef-ui": "ssh://github.com:MI-ANEF/anef-ui-lib.git#develop",
+    "anef-ui": "ssh://github.com:MI-ANEF/anef-ui-lib.git#test",
     "bootstrap-scss": "^4.6.0",
     "file-saver": "2.0.0",
     "fullcalendar": "^4.0.0-alpha.4",
