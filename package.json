@@ -2,7 +2,8 @@
   "name": "aef-portail-agent",
   "version": "1.111.0",
   "pre-commit": [
-    "lint"
+    "lint",
+    "random"
   ],
   "scripts": {
     "start": "ng serve --baseHref /sejour/",
