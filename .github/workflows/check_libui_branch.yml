@@ -3,11 +3,12 @@ on:
     branches:
     - main
 
-env: 
-  LIB_UI_BRANCH: ""
+
   
 jobs:
   check-if-is-libui-on-develop:
+    env: 
+      LIB_UI_BRANCH: ""
     runs-on: ubuntu-latest
     steps:
     - name: checkout
