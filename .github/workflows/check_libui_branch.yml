@@ -19,5 +19,5 @@ jobs:
     - name: Test
       run: | 
         ls -la
-        PACKAGE_VERSION=$(cat ./package.json | jq '.dependencies.anef-ui' | tr -d '"')
+        PACKAGE_VERSION=$(cat ./package.json | jq '.dependencies["anef-ui"]' | tr -d '"')
         echo $PACKAGE_VERSION
