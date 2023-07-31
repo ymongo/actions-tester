@@ -4,7 +4,7 @@ on:
     - main
 
 env: 
-  PACKAGE_VERSION: ""
+  LIB_UI_BRANCH: ""
   
 jobs:
   check-if-is-libui-on-develop:
@@ -18,6 +18,10 @@ jobs:
         sparse-checkout-cone-mode: false
     - name: Test
       run: | 
-        ls -la
-        PACKAGE_VERSION=$(cat ./package.json | jq '.dependencies["anef-ui"]' | tr -d '"')
-        echo $PACKAGE_VERSION
+        LIB_UI_BRANCH=$(cat ./package.json | jq '.dependencies["anef-ui"]' | tr -d '"')
+        echo $LIB_UI_BRANCH
+      if: $LIB_UI_BRANCH != "ssh://github.com:MI-ANEF/anef-ui-lib.git#develop"
+        exit 1
+    - name: Pass
+      run: echo Lib UI branch is on develop
+
