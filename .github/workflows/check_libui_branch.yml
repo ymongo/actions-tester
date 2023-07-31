@@ -5,5 +5,8 @@ on:
 jobs:
   check-if-is-libui-on-develop:
     runs-on: ubuntu-latest
+    env: 
+      PACKAGE_VERSION: ""
     steps: 
       - run: PACKAGE_VERSION=$(cat ${PACKAGE_JSON_PATH}/package.json | jq '.version' | tr -d '"')
+      - run: echo PACKAGE_VERSION
