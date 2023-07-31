@@ -21,7 +21,7 @@ jobs:
         LIB_UI_BRANCH=$(cat ./package.json | jq '.dependencies["anef-ui"]' | tr -d '"')
         echo $LIB_UI_BRANCH
     - name: Test
-      if: $LIB_UI_BRANCH != "ssh://github.com:MI-ANEF/anef-ui-lib.git#develop"
+      if: LIB_UI_BRANCH != "ssh://github.com:MI-ANEF/anef-ui-lib.git#develop"
       run: exit 1
     - name: Pass
       run: echo Lib UI branch is on develop
